@@ -33,11 +33,11 @@
             <div class="form-group">
                  <div class="form-group">
                       <label for="ortsfeld"></label>
-                      <input type="text" class="form-control" id="ortsfeld" name="ortsfeld" placeholder="Wohin willst du?" maxlength="30" required="required">
+                      <input type="text" class="form-control" id="ort" name="ortsfeld" placeholder="Wohin willst du?" maxlength="30" required="required">
                  </div>
             </div>
-                 <button type="submit" class="btn btn-default">Restaurant</button>
-                 <button type="submit" class="btn btn-default">Aktivitäten</button>
+                 <button formaction="restaurant.php" type="submit" class="btn btn-default">Restaurant</button>
+                 <button formaction="activity.php" type="submit" class="btn btn-default">Aktivitäten</button>
           </form>
 
         </div>

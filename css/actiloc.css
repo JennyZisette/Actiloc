@@ -1,0 +1,13 @@
+@charset "UTF-8";
+/**Allgemein **/
+h1 {
+  font-family: Avenir, sans-serif;
+  font-size: 8em;
+  color: #00868b;
+}
+
+.page-header {
+  background-color:#f0ffff;
+}
+
+/** Index**/

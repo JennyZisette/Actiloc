@@ -1,3 +1,19 @@
+<?php
+require_once("system/data.php");
+require_once("system/security.php");
+
+if(!empty($_GET['ort'])){
+  $restaurant_list = get_restaurant($ort);
+}
+else{
+  echo "Dieses Ortsfeld exisitiert nicht.";
+}
+
+
+
+
+
+?>
 <html>
   <head>
     <meta charset="UTF-8">
@@ -24,4 +40,9 @@
             </a>
           </header>
       </div>
+      <?php   while($restaurant = mysqli_fetch_assoc($restaurant_list)) {
+        echo $restaurant['name'];
+        }
+        ?>
+
    </body>

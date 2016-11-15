@@ -84,5 +84,13 @@
             </div>
           </div>
         </form>
-        <div class="alert alert-danger" role="alert"> <?php echo $error_msg?></div>
+        <div>
+          <?php
+            if($error == true){
+          ?>
+              <div class="alert alert-danger" role="alert"><?php echo $error_msg; ?></div>
+          <?php
+            }
+          ?>
+        </div>
    </body>

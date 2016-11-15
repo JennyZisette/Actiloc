@@ -27,4 +27,9 @@ function login($email , $password){
 }
 
 
+// Restaurant
+function get_restaurant($ort){
+  $sql = "SELECT * FROM restaurant WHERE ort = '".$ort."';";
+  return get_result($sql);
+}
  ?>

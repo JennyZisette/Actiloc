@@ -78,7 +78,7 @@ $error = false;
         <div class="col-xs-12">
           <h2> Wohin willst du?</h2>
 
-          <form method="post">
+          <form method="get">
             <div class="form-group">
                  <div class="form-group">
                       <label for="ort"></label>

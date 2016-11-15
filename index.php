@@ -6,22 +6,22 @@ $error = false;
   $success_msg = "";
   // Kontrolle, ob die Seite direkt aufgerufen wurde oder vom Login-Formular
   if(isset($_GET['ort'])){
-    // Kontrolle mit isset, ob email und password ausgefüllt wurde
+    // Kontrolle mit isset, ob ort ausgefüllt wurde
     if(!empty($_GET['ort'])){
 
       // Werte aus POST-Array auf SQL-Injections prüfen und in Variablen schreiben
       $ort = filter_data($_GET['ort']);
 
       // Liefert alle Infos zu User mit diesen Logindaten
-      $result = restaurant($ort_id,$password);
+      $result = restaurant($ort_id);
 
       // Anzahl der gefundenen Ergebnisse in $row_count
   		$row_count = mysqli_num_rows($result);
       if( $row_count == 1){
         session_start();
         $user = mysqli_fetch_assoc($result);
-        $_SESSION['userid'] = $user['user_id'];
-        header("Location:home.php");
+        $_SESSION['ort_id'] = $ort['ort_id'];
+        header("Location:restaurant.php");
       }else{
         // Fehlermeldungen werden erst später angezeigt
         $error = true;

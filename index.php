@@ -29,11 +29,11 @@
         <div class="col-xs-12">
           <h2> Wohin willst du?</h2>
 
-          <form method="post">
+          <form method="get">
             <div class="form-group">
                  <div class="form-group">
-                      <label for="ortsfeld"></label>
-                      <input type="text" class="form-control" id="ort" name="ortsfeld" placeholder="Wohin willst du?" maxlength="30" required="required">
+                      <label for="ort"></label>
+                      <input type="text" class="form-control" id="ort" name="ort" placeholder="Wohin willst du?" maxlength="30" required="required">
                  </div>
             </div>
                  <button formaction="restaurant.php" type="submit" class="btn btn-default">Restaurant</button>

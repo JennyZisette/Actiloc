@@ -17,7 +17,7 @@
     <script src="plugin/js/ap-scroll-top.js"></script>
   </head>
   <body>
-        <div class="page-header col-xs-12 header">
+      <div class="page-header col-xs-12 header">
           <header>
             <a href="index.php">
             <h1>ActiLoc </h1>

@@ -3,6 +3,7 @@ require_once("system/data.php");
 require_once("system/security.php");
 
 if(!empty($_GET['ort'])){
+  $ort = $_GET ['ort'];
   $restaurant_list = get_restaurant($ort);
 }
 else{
@@ -41,6 +42,8 @@ else{
           </header>
       </div>
       <?php   while($restaurant = mysqli_fetch_assoc($restaurant_list)) {
+
+        echo $restaurant['art'];
         echo $restaurant['name'];
         }
         ?>

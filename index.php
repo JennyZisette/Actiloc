@@ -40,13 +40,6 @@ $error = false;
 
 
 
-
-
-
-
-
-
-
 <html>
   <head>
     <meta charset="UTF-8">

@@ -15,7 +15,7 @@
 	/* *******************************************************************************************************/
 	function get_db_connection()
 	{
-    $db = mysqli_connect('localhost', 'benutzer', 'passwort', 'datenbankname')
+    $db = mysqli_connect('localhost', '155425_3_1', 'zwDEeuSNJ4BC', '155425_3_1')
       or die('Fehler beim Verbinden mit dem Datenbank-Server.');
   		mysqli_query($db, "SET NAMES 'utf8'");
 		return $db;

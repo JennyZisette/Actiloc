@@ -2,14 +2,14 @@
   session_start();
 	if(isset($_SESSION['id'])) unset($_SESSION['id']);
 	session_destroy();
-	
+
 	// externe Dateien Laden
 	// data.php beinhaltet alle DB-Anweisungen wie SELECT, INSERT, UPDATE, etc.
 	// Funktionen in data.php liefern das Ergebnis der Anweisungen zurück
 	// security.php enthält sicherheitsrelevante Funktionen
 	require_once("system/data.php");
 	require_once("system/security.php");
-  
+
   // für Spätere Verwendung initialisieren wir die Variablen $error, $error_msg, $success, $success_msg
   $error = false;
   $error_msg = "";
@@ -19,20 +19,20 @@
   if(isset($_POST['login-submit'])){
     // Kontrolle mit isset, ob email und password ausgefüllt wurde
     if(!empty($_POST['email']) && !empty($_POST['password'])){
-      
+
       // Werte aus POST-Array auf SQL-Injections prüfen und in Variablen schreiben
       $email = filter_data($_POST['email']);
       $password = filter_data($_POST['password']);
-      
+
       // Liefert alle Infos zu User mit diesen Logindaten
       $result = login($email,$password);
-      
+
       // Anzahl der gefundenen Ergebnisse in $row_count
   		$row_count = mysqli_num_rows($result);
       if( $row_count == 1){
         session_start();
         $user = mysqli_fetch_assoc($result);
-        $_SESSION['userid'] = $user['user_id'];
+        $_SESSION['adminid'] = $user['admin_id'];
         header("Location:home.php");
       }else{
         // Fehlermeldungen werden erst später angezeigt
@@ -49,7 +49,7 @@
   if(isset($_POST['register-submit'])){
     // Kontrolle mit isset, ob email und password ausgefüllt wurde
     if(!empty($_POST['email']) && !empty($_POST['password']) && !empty($_POST['confirm-password'])){
-      
+
       // Werte aus POST-Array auf SQL-Injections prüfen und in Variablen schreiben
       $email = filter_data($_POST['email']);
       $password = filter_data($_POST['password']);
@@ -131,7 +131,7 @@
   									</div>
   								</form>
   								<!-- /Login-Formular -->
-  								
+
   								<form id="register-form" action="#" method="post" role="form" style="display: none;">
   									<div class="form-group">
   										<input type="email" name="email" id="email" tabindex="1" class="form-control" placeholder="E-Mail-Adresse" value="">
@@ -150,7 +150,7 @@
   										</div>
   									</div>
   								</form>
-  								
+
   							</div>
   						</div>
   					</div>
@@ -158,29 +158,29 @@
   			</div>
   		</div>
   		<!-- Die beiden BS-Allert-Boxen geben Rückmeldung über den Registrierungsprozess. Sie werden erst später benötigt. -->
-  <?php 
+  <?php
     // Gibt es einen Erfolg zu vermelden?
     if($success == true){
   ?>
       <div class="alert alert-success" role="alert"><?php echo $success_msg; ?></div>
-  <?php 
+  <?php
     }   // schliessen von if($success == true)
     // Gibt es einen Fehler?
-    if($error == true){ 
+    if($error == true){
   ?>
       <div class="alert alert-danger" role="alert"><?php echo $error_msg; ?></div>
   <?php
     }   // schliessen von if($success == true)
   ?>
   	</div><!-- /container -->
-    
+
     <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
     <!-- Include all compiled plugins (below), or include individual files as needed -->
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js" integrity="sha384-0mSbJDEHialfmuBBQP6A4Qrprq5OVfW37PRR3j5ELqxss1yVqOtnepnHVP9aJ7xS" crossorigin="anonymous"></script>
     <script>
       $(function() {
-        
+
         $('#login-form-link').click(function(e) {
       		$("#login-form").delay(100).fadeIn(100);
        		$("#register-form").fadeOut(100);
@@ -188,7 +188,7 @@
       		$(this).addClass('active');
       		e.preventDefault();
       	});
-      	
+
       	$('#register-form-link').click(function(e) {
       		$("#register-form").delay(100).fadeIn(100);
        		$("#login-form").fadeOut(100);
@@ -196,7 +196,7 @@
       		$(this).addClass('active');
       		e.preventDefault();
       	});
-      
+
       });
     </script>
 

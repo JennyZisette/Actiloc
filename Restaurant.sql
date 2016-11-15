@@ -8,24 +8,24 @@ SET @OLD_FOREIGN_KEY_CHECKS=@@FOREIGN_KEY_CHECKS, FOREIGN_KEY_CHECKS=0;
 SET @OLD_SQL_MODE=@@SQL_MODE, SQL_MODE='TRADITIONAL,ALLOW_INVALID_DATES';
 
 -- -----------------------------------------------------
--- Schema mydb
+-- Schema 155425_3_1
 -- -----------------------------------------------------
-DROP SCHEMA IF EXISTS `mydb` ;
+DROP SCHEMA IF EXISTS `155425_3_1` ;
 
 -- -----------------------------------------------------
--- Schema mydb
+-- Schema 155425_3_1
 -- -----------------------------------------------------
-CREATE SCHEMA IF NOT EXISTS `mydb` DEFAULT CHARACTER SET utf8 ;
+CREATE SCHEMA IF NOT EXISTS `155425_3_1` DEFAULT CHARACTER SET utf8 ;
 SHOW WARNINGS;
-USE `mydb` ;
+USE `155425_3_1` ;
 
 -- -----------------------------------------------------
--- Table `mydb`.`restaurant`
+-- Table `155425_3_1`.`restaurant`
 -- -----------------------------------------------------
-DROP TABLE IF EXISTS `mydb`.`restaurant` ;
+DROP TABLE IF EXISTS `155425_3_1`.`restaurant` ;
 
 SHOW WARNINGS;
-CREATE TABLE IF NOT EXISTS `mydb`.`restaurant` (
+CREATE TABLE IF NOT EXISTS `155425_3_1`.`restaurant` (
   `restaurant_id` INT NOT NULL AUTO_INCREMENT,
   `name` VARCHAR(45) NULL,
   `ort_id` INT NULL,
@@ -43,12 +43,12 @@ ENGINE = InnoDB;
 SHOW WARNINGS;
 
 -- -----------------------------------------------------
--- Table `mydb`.`aktivität`
+-- Table `155425_3_1`.`aktivität`
 -- -----------------------------------------------------
-DROP TABLE IF EXISTS `mydb`.`aktivität` ;
+DROP TABLE IF EXISTS `155425_3_1`.`aktivität` ;
 
 SHOW WARNINGS;
-CREATE TABLE IF NOT EXISTS `mydb`.`aktivität` (
+CREATE TABLE IF NOT EXISTS `155425_3_1`.`aktivität` (
   `aktivitaet_id` INT NOT NULL AUTO_INCREMENT,
   `name` VARCHAR(20) NULL,
   `ort_id` INT NULL,
@@ -66,12 +66,12 @@ ENGINE = InnoDB;
 SHOW WARNINGS;
 
 -- -----------------------------------------------------
--- Table `mydb`.`bewertung`
+-- Table `155425_3_1`.`bewertung`
 -- -----------------------------------------------------
-DROP TABLE IF EXISTS `mydb`.`bewertung` ;
+DROP TABLE IF EXISTS `155425_3_1`.`bewertung` ;
 
 SHOW WARNINGS;
-CREATE TABLE IF NOT EXISTS `mydb`.`bewertung` (
+CREATE TABLE IF NOT EXISTS `155425_3_1`.`bewertung` (
   `bewertung_id` INT NOT NULL AUTO_INCREMENT,
   `text` VARCHAR(250) NULL,
   `sterne` INT NULL,
@@ -85,12 +85,12 @@ ENGINE = InnoDB;
 SHOW WARNINGS;
 
 -- -----------------------------------------------------
--- Table `mydb`.`kategorie`
+-- Table `155425_3_1`.`kategorie`
 -- -----------------------------------------------------
-DROP TABLE IF EXISTS `mydb`.`kategorie` ;
+DROP TABLE IF EXISTS `155425_3_1`.`kategorie` ;
 
 SHOW WARNINGS;
-CREATE TABLE IF NOT EXISTS `mydb`.`kategorie` (
+CREATE TABLE IF NOT EXISTS `155425_3_1`.`kategorie` (
   `kategorie_id` INT NOT NULL AUTO_INCREMENT,
   `auswahl` VARCHAR(45) NULL,
   PRIMARY KEY (`kategorie_id`))
@@ -99,12 +99,12 @@ ENGINE = InnoDB;
 SHOW WARNINGS;
 
 -- -----------------------------------------------------
--- Table `mydb`.`kueche`
+-- Table `155425_3_1`.`kueche`
 -- -----------------------------------------------------
-DROP TABLE IF EXISTS `mydb`.`kueche` ;
+DROP TABLE IF EXISTS `155425_3_1`.`kueche` ;
 
 SHOW WARNINGS;
-CREATE TABLE IF NOT EXISTS `mydb`.`kueche` (
+CREATE TABLE IF NOT EXISTS `155425_3_1`.`kueche` (
   `kueche_id` INT NOT NULL AUTO_INCREMENT,
   `art` VARCHAR(45) NULL,
   PRIMARY KEY (`kueche_id`))
@@ -113,12 +113,12 @@ ENGINE = InnoDB;
 SHOW WARNINGS;
 
 -- -----------------------------------------------------
--- Table `mydb`.`ort`
+-- Table `155425_3_1`.`ort`
 -- -----------------------------------------------------
-DROP TABLE IF EXISTS `mydb`.`ort` ;
+DROP TABLE IF EXISTS `155425_3_1`.`ort` ;
 
 SHOW WARNINGS;
-CREATE TABLE IF NOT EXISTS `mydb`.`ort` (
+CREATE TABLE IF NOT EXISTS `155425_3_1`.`ort` (
   `ort_id` INT NOT NULL,
   `ortsname` VARCHAR(45) NULL,
   PRIMARY KEY (`ort_id`))

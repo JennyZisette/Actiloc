@@ -1,3 +1,52 @@
+<?php
+
+$error = false;
+  $error_msg = "";
+  $success = false;
+  $success_msg = "";
+  // Kontrolle, ob die Seite direkt aufgerufen wurde oder vom Login-Formular
+  if(isset($_GET['ort'])){
+    // Kontrolle mit isset, ob email und password ausgefüllt wurde
+    if(!empty($_GET['ort'])){
+
+      // Werte aus POST-Array auf SQL-Injections prüfen und in Variablen schreiben
+      $ort = filter_data($_GET['ort']);
+
+      // Liefert alle Infos zu User mit diesen Logindaten
+      $result = restaurant($ort_id,$password);
+
+      // Anzahl der gefundenen Ergebnisse in $row_count
+  		$row_count = mysqli_num_rows($result);
+      if( $row_count == 1){
+        session_start();
+        $user = mysqli_fetch_assoc($result);
+        $_SESSION['userid'] = $user['user_id'];
+        header("Location:home.php");
+      }else{
+        // Fehlermeldungen werden erst später angezeigt
+        $error = true;
+        $error_msg .= "Leider konnten wir die Postleitzahl nicht finden.</br>";
+      }
+    }else{
+      $error = true;
+      $error_msg .= "Bitte geben Sie eine Postleitzahl ein.</br>";
+    }
+  }
+
+
+
+?>
+
+
+
+
+
+
+
+
+
+
+
 <html>
   <head>
     <meta charset="UTF-8">
@@ -32,8 +81,8 @@
           <form method="post">
             <div class="form-group">
                  <div class="form-group">
-                      <label for="ortsfeld"></label>
-                      <input type="text" class="form-control" id="ort" name="ortsfeld" placeholder="Wohin willst du?" maxlength="30" required="required">
+                      <label for="ort"></label>
+                      <input type="text" class="form-control" id="ort" name="ort" placeholder="Wohin willst du?" maxlength="30" required="required">
                  </div>
             </div>
                  <button formaction="restaurant.php" type="submit" class="btn btn-default">Restaurant</button>

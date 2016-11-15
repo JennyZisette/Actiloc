@@ -1,43 +1,11 @@
 <!DOCTYPE html>
-<html lang="de">
-  <head>
-    <meta charset="utf-8">
-    <title>AJAX Autocomplete Example</title>
-    <script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
-  </head>
-  <body>
-    <form>
-      <input type="text" "id="searchform" />
-    </form>
-    <ul class="result">
-
-</ul>
-
-<script>
-    $('#searchform').keyup(function(){
-        var value = $(this).val();
-
-        var container = $('ul.result');
-        container.html('');
-
-        var url = 'autocomplete.php?search=' + value;
-
-        if(value.length > 2) {
-            $.get(url, function(data){
-
-                for (i in data) {
-                    var html = '<li>';
-                    html += data[i].city;
-                    html += '</li>';
-
-                    container.append(html);
-
-                    }
-            });
-        };
-    });
-
-</script>
-
-  </body>
+<html>
+<head>
+  <title>Auto-complete tutorial</title>
+  <script src="//ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+  <script src="auto-complete.js"></script>
+</head>
+<body>
+  	<input type="text" value="" placeholder="Search" id="keyword">
+</body>
 </html>

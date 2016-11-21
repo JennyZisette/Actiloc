@@ -1,18 +1,3 @@
-<?php
-require_once("system/data.php");
-require_once("system/security.php");
-
-$ort = "ort";
-$restaurant_list = get_admin_restaurant();
-$aktivitaet_list = get_admin_aktivitaet();
-
-
-
-
-  ?>
-
-
-
 <html>
   <head>
     <meta charset="UTF-8">
@@ -39,54 +24,4 @@ $aktivitaet_list = get_admin_aktivitaet();
             </a>
           </header>
       </div>
-
-
-<h3> Restaurants </h3>
-<?php
-while($restaurant = mysqli_fetch_assoc($restaurant_list)) {
-
-   ?>
-
-  <div class="row"><!-- Beitrag-->
-      <div class="col-xs-10">
-        <div class="panel panel-default">
-          <div class="panel-heading">
-            <h3 class="panel-title"><?php echo $restaurant['name']; ?></h3>
-          </div>
-          <div class="panel-body">
-            <?php
-              foreach($restaurant as $fieldname => $value) {
-                echo $fieldname . ": " . $value . '<br>';
-              }
-            ?>
-        </div>
-      </div>
-  </div> <!-- /Beitrag -->
-</div>
-<?php   } ?>
-<h3> Aktivitäten </h3>
-<?php
-while($aktivitaet = mysqli_fetch_assoc($aktivitaet_list)) {
-
-   ?>
-
-  <div class="row"><!-- Beitrag-->
-      <div class="col-xs-10">
-        <div class="panel panel-default">
-          <div class="panel-heading">
-            <h3 class="panel-title"><?php echo $aktivitaet['name']; ?></h3>
-          </div>
-                    <div class="panel-body">
-            <?php
-              foreach($aktivitaet as $fieldname => $value) {
-                echo $fieldname . ": " . $value . '<br>';
-              }
-            ?>
-        </div>
-      </div>
-  </div> <!-- /Beitrag -->
-</div>
-<?php } ?>
-
-
    </body>

@@ -30,7 +30,7 @@ function login($email , $password){
 // Restaurant
 function get_restaurant($ort){
 
-  $sql = "SELECT kueche.art, restaurant.name, restaurant.adresse, restaurant.lead, ort.ort_id, ort.ortsname FROM restaurant
+  $sql = "SELECT kueche.art, restaurant.name, restaurant.adresse, restaurant.lead, restaurant.beschreibungstext, restaurant.website, restaurant.telefon, ort.ort_id, ort.ortsname FROM restaurant
   INNER JOIN kueche USING(kueche_id)
   INNER JOIN ort USING(ort_id)
   WHERE ort_id = '".$ort."';";
@@ -40,14 +40,13 @@ function get_restaurant($ort){
 //Aktivität
 function get_aktivitaet($ort){
 
-  $sql = "SELECT aktivitaet.name, aktivitaet.adresse, aktivitaet.lead, ort.ortsname, ort.ort_id FROM aktivitaet
-  INNER JOIN ort USING(ort_id)
+  $sql = "SELECT aktivitaet.name, aktivitaet.adresse, aktivitaet.lead, aktivitaet.ort_id FROM aktivitaet
   WHERE ort_id = '".$ort."';";
   return get_result($sql);
 }
 
 // admin Restaurant Anzeige
-function get_admin_restaurant(){
+function get_admin_restaurant($ort){
 
   $sql = "SELECT * FROM `restaurant`";
   return get_result($sql);
@@ -55,9 +54,9 @@ function get_admin_restaurant(){
 
 
 // admin Aktivität Anzeige
-function get_admin_aktivitaet(){
+function get_admin_aktivitaet($ort){
 
-  $sql = "SELECT * FROM `aktivitaet` ";
+  $sql = "SELECT * FROM `aktivitaet'";
     return get_result($sql);
 }
 
@@ -67,13 +66,4 @@ function get_ort($ort){
   $sql = "SELECT * FROM 'ort'";
 }
 
-
-function add_restaurant($name, $ort_id, $adresse, $kueche_id, $preis, $foto, $beschreibungstext, $lead, $telefon, $website){
-  $sql = "INSERT INTO restaurant (name, ort_id, adresse, kueche_id, preis, foto, beschreibungstext, lead, telefon, websiteg) VALUES ('$name', '$ort_id', '$adresse', '$kueche_id', '$preis', '$foto', '$beschreibungstext', '$lead', '$telefon', '$website');";
-  return get_result($sql);
-}
-
-
-	/*
-  function add_friends($user_id, $friend_list){
-  */
+?>

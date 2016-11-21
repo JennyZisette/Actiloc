@@ -1,3 +1,16 @@
+<?php
+require_once("system/data.php");
+require_once("system/security.php");
+
+$ort = get_ort($ort);
+
+$restaurant_list = get_admin_restaurant($ort);
+
+
+  ?>
+
+
+
 <html>
   <head>
     <meta charset="UTF-8">
@@ -24,4 +37,18 @@
             </a>
           </header>
       </div>
+
+<?php
+
+while($restaurant = mysqli_fetch_assoc($restaurant_list)) {
+$restaurant_list = get_admin_restaurant($ort);
+  echo $restaurant['name'];
+  echo $restaurant['adresse'];
+  echo $restaurant['ort_id'];
+  echo $restaurant['lead'];
+
+}
+
+?>
+
    </body>

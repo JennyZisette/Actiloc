@@ -1,3 +1,21 @@
+<?php
+require_once("system/data.php");
+require_once("system/security.php");
+
+if(!empty($_GET['ort'])){
+  $ort = $_GET ['ort'];
+  $aktivitaet_list = get_aktivitaet($ort);
+}
+else{
+  echo "Dieses Ortsfeld exisitiert nicht.";
+}
+
+
+
+
+
+?>
+
 <html>
   <head>
     <meta charset="UTF-8">

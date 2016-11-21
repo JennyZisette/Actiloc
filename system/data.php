@@ -66,4 +66,13 @@ function get_ort($ort){
   $sql = "SELECT * FROM 'ort'";
 }
 
-?>
+
+function add_restaurant($name, $ort_id, $adresse, $kueche_id, $preis, $foto, $beschreibungstext, $lead, $telefon, $website){
+  $sql = "INSERT INTO restaurant (name, ort_id, adresse, kueche_id, preis, foto, beschreibungstext, lead, telefon, websiteg) VALUES ('$name', '$ort_id', '$adresse', '$kueche_id', '$preis', '$foto', '$beschreibungstext', '$lead', '$telefon', '$website');";
+  return get_result($sql);
+}
+
+
+	/*
+  function add_friends($user_id, $friend_list){
+  */

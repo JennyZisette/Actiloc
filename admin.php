@@ -5,6 +5,10 @@ require_once("system/security.php");
 $ort = "ort";
 $restaurant_list = get_admin_restaurant($ort);
 $aktivitaet_list = get_admin_aktivitaet($ort);
+
+
+
+
   ?>
 
 
@@ -60,7 +64,6 @@ while($restaurant = mysqli_fetch_assoc($restaurant_list)) {
   </div> <!-- /Beitrag -->
 </div>
 <?php   } ?>
-
 <?php
 while($aktivitaet = mysqli_fetch_assoc($aktivitaet_list)) {
 
@@ -82,6 +85,7 @@ while($aktivitaet = mysqli_fetch_assoc($aktivitaet_list)) {
       </div>
   </div> <!-- /Beitrag -->
 </div>
-<?php   } ?>
+<?php } ?>
+
 
    </body>

@@ -50,15 +50,39 @@ else{
                   <h3 class="panel-title"><?php echo $restaurant['name']; ?></h3>
                 </div>
                 <div class="panel-body">
-                  <p><?php echo $restaurant['adresse'] . " " . $restaurant['ort_id'] . " " . $restaurant['ortsname']; ?></p> <br>
+                  <p><?php echo $restaurant['adresse']; ?></p>
+                  <p><?php echo $restaurant['ort_id'] . " " . $restaurant['ortsname']; ?></p>
                   <p><?php echo $restaurant['lead'];?> </p>
-              </div>
-              <div class="panel-footer">
-                  <button type="submit" class="btn btn-default"> Mehr Infos </button>
+
+                  <p class="p1" hidden="p1"><?php echo $restaurant ['beschreibungstext']; ?><br><br>
+                      <?php echo $restaurant ['telefon'];?><br>
+                      <?php echo $restaurant ['website'];?></p>
+
+                  <div class="panel-footer">  <!-- Klappentext -->
+                    <script>
+
+              $(document).ready(function(){
+                $(".show-button").click(function(){
+                    $(this).closest('.panel').find('.p1').show();
+                });
+                $(".hide-button").click(function(){
+                      $(this).closest('.panel').find('.p1').hide();
+                  });
+
+              });
+              </script>
+              <button class="show-button">mehr anzeigen</button>
+              <button class="hide-button">weniger anzeigen</button>
+
               </div>
             </div>
           </div>
       </div> <!-- /Restaurant Listenelement -->
+    </div>
+
+      <!-- Klappentext -->
+
+
       <?php   } ?>
 
    </body>

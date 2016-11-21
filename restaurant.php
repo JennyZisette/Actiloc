@@ -44,7 +44,7 @@ else{
       <?php   while($restaurant = mysqli_fetch_assoc($restaurant_list)) {  ?>
 
         <div class="row"><!-- Restaurant Listenelement-->
-            <div class="col-xs-8">
+            <div class="col-xs-8 listenelement">
               <div class="panel panel-default">
                 <div class="panel-heading">
                   <h3 class="panel-title"><?php echo $restaurant['name']; ?></h3>
@@ -56,8 +56,9 @@ else{
               <div class="panel-footer">
                   <button type="submit" class="btn btn-default"> Mehr Infos </button>
               </div>
-        </div> <!-- /Restaurant Listenelement -->
-      </div>
+            </div>
+          </div>
+      </div> <!-- /Restaurant Listenelement -->
       <?php   } ?>
 
    </body>

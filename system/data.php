@@ -30,7 +30,7 @@ function login($email , $password){
 // Restaurant
 function get_restaurant($ort){
 
-  $sql = "SELECT kueche.art, restaurant.name, restaurant.adresse, restaurant.lead, ort.ort_id FROM restaurant
+  $sql = "SELECT kueche.art, restaurant.name, restaurant.adresse, restaurant.lead, ort.ort_id, ort.ortsname FROM restaurant
   INNER JOIN kueche USING(kueche_id)
   INNER JOIN ort USING(ort_id)
   WHERE ort_id = '".$ort."';";

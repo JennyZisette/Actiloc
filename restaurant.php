@@ -41,15 +41,21 @@ else{
             </a>
           </header>
       </div>
-      <?php   while($restaurant = mysqli_fetch_assoc($restaurant_list)) {
+      <?php   while($restaurant = mysqli_fetch_assoc($restaurant_list)) {  ?>
 
-        echo $restaurant['art'];
-        echo $restaurant['name'];
-        echo $restaurant['adresse'];
-        echo $restaurant['ort_id'];
-        echo $restaurant['lead'];
-
-        }
-        ?>
+        <div class="row"><!-- Beitrag-->
+            <div class="col-xs-10">
+              <div class="panel panel-default">
+                <div class="panel-heading">
+                  <h3 class="panel-title"><?php echo $restaurant['name']; ?></h3>
+                </div>
+                <div class="panel-body">
+                  <p><?php echo $restaurant['adresse'] . " " . $restaurant['ort_id'] . " " . $restaurant['ortsname']; ?></p> <br>
+                  <p><?php echo $restaurant['lead'];?> </p>
+              </div>
+            </div>
+        </div> <!-- /Beitrag -->
+      </div>
+ <?php   } ?>
 
    </body>

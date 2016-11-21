@@ -40,7 +40,8 @@ function get_restaurant($ort){
 //Aktivität
 function get_aktivitaet($ort){
 
-  $sql = "SELECT aktivitaet.name, aktivitaet.adresse, aktivitaet.lead, aktivitaet.ort_id FROM aktivitaet
+  $sql = "SELECT aktivitaet.name, aktivitaet.adresse, aktivitaet.lead, aktivitaet.ort_id, ort.ort_id, ort.ortsname FROM aktivitaet
+  INNER JOIN ort USING(ort_id)
   WHERE ort_id = '".$ort."';";
   return get_result($sql);
 }

@@ -48,20 +48,22 @@ function get_aktivitaet($ort){
 // admin Restaurant Anzeige
 function get_admin_restaurant($ort){
 
-  $sql = "SELECT * FROM `restaurant` WHERE 1";
+  $sql = "SELECT * FROM `restaurant`";
+  return get_result($sql);
 }
 
 
 // admin Aktivität Anzeige
 function get_admin_aktivitaet($ort){
 
-  $sql = "SELECT * FROM `aktivitaet` WHERE 1";
+  $sql = "SELECT * FROM `aktivitaet'";
+    return get_result($sql);
 }
 
 
 function get_ort($ort){
 
-  $sql = "SELECT * FROM 'ort' WHERE 1";
+  $sql = "SELECT * FROM 'ort'";
 }
 
 ?>

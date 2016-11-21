@@ -45,6 +45,10 @@ else{
 
         echo $restaurant['art'];
         echo $restaurant['name'];
+        echo $restaurant['adresse'];
+        echo $restaurant['ort_id'];
+        echo $restaurant['lead'];
+
         }
         ?>
 

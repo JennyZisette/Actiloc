@@ -1,3 +1,18 @@
+<?php
+require_once("system/data.php");
+require_once("system/security.php");
+
+if(!empty($_GET['ort'])){
+  $ort = $_GET ['ort'];
+  $aktivitaet_list = get_aktivitaet($ort);
+}
+else{
+  echo "Dieses Ortsfeld exisitiert nicht.";
+}
+
+
+?>
+
 <html>
   <head>
     <meta charset="UTF-8">
@@ -24,4 +39,21 @@
             </a>
           </header>
       </div>
+      <?php   while($aktivitaet = mysqli_fetch_assoc($aktivitaet_list)) {  ?>
+
+        <div class="row"><!-- Restaurant Listenelement-->
+            <div class="col-xs-8 listenelement">
+              <div class="panel panel-default">
+                <div class="panel-heading">
+                  <h3 class="panel-title"><?php echo $aktivitaet['name']; ?></h3>
+                </div>
+                <div class="panel-body">
+                  <p><?php echo $aktivitaet['adresse'] . " " . $aktivitaet['ort_id'] . " " . $aktivitaet['ortsname']; ?></p> <br>
+                  <p><?php echo $aktivitaet['lead'];?> </p>
+              </div>
+            </div>
+          </div>
+      </div> <!-- /Restaurant Listenelement -->
+      <?php   } ?>
+
   </body>

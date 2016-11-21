@@ -3,8 +3,8 @@ require_once("system/data.php");
 require_once("system/security.php");
 
 $ort = "ort";
-$restaurant_list = get_admin_restaurant($ort);
-$aktivitaet_list = get_admin_aktivitaet($ort);
+$restaurant_list = get_admin_restaurant();
+$aktivitaet_list = get_admin_aktivitaet();
 
 
 

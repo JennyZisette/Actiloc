@@ -46,7 +46,7 @@ function get_aktivitaet($ort){
 }
 
 // admin Restaurant Anzeige
-function get_admin_restaurant($ort){
+function get_admin_restaurant(){
 
   $sql = "SELECT * FROM `restaurant`";
   return get_result($sql);
@@ -54,9 +54,9 @@ function get_admin_restaurant($ort){
 
 
 // admin Aktivität Anzeige
-function get_admin_aktivitaet($ort){
+function get_admin_aktivitaet(){
 
-  $sql = "SELECT * FROM `aktivitaet'";
+  $sql = "SELECT * FROM `aktivitaet` ";
     return get_result($sql);
 }
 

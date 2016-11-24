@@ -88,7 +88,7 @@ function get_ort($ort){
 }
 
 function write_post_restaurant(){
-  $sql = "SELECT * FROM `restaurant`";
+  $sql = "INSERT INTO restaurant (name, ort_id, adresse, kueche_id, preis, beschreibungstext, lead, telefon, website) VALUES ('$name', ''$ort_id', ''$adresse', '$kueche_id', '$preis', '$beschreibungstext', '$lead', '$telefon', '$website');";
   return get_result($sql);
 }
 ?>

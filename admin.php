@@ -64,6 +64,76 @@
     </div> <!-- /Beitrag -->
   </div>
   <?php   } ?>
+
+  <!-- Post hinzufügen -->
+  <div class="row">
+    <div class="col-xs-12">
+      <div class="panel panel-default">
+        <div class="panel-heading">Restaurant hinzufügen?</div>
+        <div class="panel-body">
+          <form enctype="multipart/form-data" method="post" action="<?PHP echo $_SERVER['PHP_SELF'] ?>">
+
+            <fieldset class="form-group">
+              <textarea class="form-control" rows="3" name="posttext"></textarea>
+            </fieldset>
+            <div class="collapse" id="upload_container">
+              <div class="well">
+                  </div>
+                  </div>
+
+
+            <button type="submit" name="post-submit" class="btn btn-primary">posten</button>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div> <!-- /Post hinzufügen -->
+
+
+<?php   while($post = mysqli_fetch_assoc($restaurant_list)) { ?>
+  <!-- Beitrag -->
+    <div class="row">
+      <div class="col-xs-2">
+        <div class="thumbnail p42thumbnail">
+        </div><!-- /thumbnail p42thumbnail -->
+      </div><!-- /col-sm-2 -->
+
+      <form enctype="multipart/form-data" class="form-inline" method="post" action="<?PHP echo $_SERVER['PHP_SELF'] ?>">
+        <div class="col-xs-10">
+          <div class="panel panel-default p42panel">
+            <div class="panel-heading">
+<?php if($post['owner'] == $user_id){  ?>
+              <button type="submit" class="close" name="post_delete" value="<?php echo $post['post_id']; ?>">
+                <span aria-hidden="true">&times;</span>
+              </button>
+<?php } ?>
+              <h3 class="panel-title"><?php echo $post['firstname'] . " " . $post['lastname']; ?></h3>
+            </div>
+            <div class="panel-body">
+              <p><?php echo $post['text']; ?></p>
+
+
+<?php } ?>
+            </div>
+            <div class="panel-footer text-right">
+              <small><a class="text-muted" href="#"><span class="glyphicon glyphicon-thumbs-up" aria-hidden="true"></span></a></small>
+            </div>
+          </div>
+        </div><!-- /col-sm-10 -->
+      </form>
+    </div> <!-- /Beitrag -->
+
+</div> <!-- /Hauptinhalt -->
+
+
+
+
+
+
+
+
+
+
  <h3> Aktivitäten </h3>
   <?php
   while($aktivitaet = mysqli_fetch_assoc($aktivitaet_list)) {
@@ -91,4 +161,5 @@
  <?php } ?>
 
 
-    </body
+
+    </body>

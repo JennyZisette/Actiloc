@@ -7,6 +7,7 @@
  $aktivitaet_list = get_admin_aktivitaet($ort);
 
 if(isset($_POST['post-submit'])){
+    $restaurant_id = filter_data ($_POST['restaurant_id'])
   	$name = filter_data($_POST['name']);
     $ort_id = filter_data($_POST['ort_id']);
     $adresse = filter_data($_POST['adresse']);

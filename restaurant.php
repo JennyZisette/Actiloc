@@ -105,7 +105,7 @@ else{
                   <p class="p1" hidden="p1"><?php echo $restaurant ['beschreibungstext']; ?><br><br>
                       <?php echo $restaurant ['telefon'];?><br>
                       <?php echo $restaurant ['website'];?></p>
-
+                  </div>
                   <div class="panel-footer">  <!-- Klappentext -->
                     <script>
 
@@ -123,7 +123,6 @@ else{
               <button class="hide-button">weniger anzeigen</button>
 
               </div>
-            </div>
           </div>
       </div> <!-- /Restaurant Listenelement -->
     </div>

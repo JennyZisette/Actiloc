@@ -74,8 +74,27 @@
           <form enctype="multipart/form-data" method="post" action="<?PHP echo $_SERVER['PHP_SELF'] ?>">
 
             <fieldset class="form-group">
-              <textarea class="form-control" rows="3" name="posttext"></textarea>
-            </fieldset>
+              <p>name</p><textarea class="form-control" rows="1" name="name"></textarea>
+
+              <p>ort_id (PLZ)</p><input type="number" class="form-control" rows="1" name="ort_id" min="1000" max="9999">
+
+            <p>adresse</p>  <textarea class="form-control" rows="1" name="adresse"></textarea>
+
+            <p>kueche_id</p>  <select name="kueche_id><" class="form-control" rows="3" name="kueche_id">
+                <option value="italienisch">1</option>
+                <option value="asiatisch">2</option>
+                <option value="schweizerisch">3</option>
+                </select>
+            <p>preis</p>  <select name="kueche_id><" class="form-control" rows="3" name="kueche_id">
+                    <option value="günstig">1</option>
+                    <option value="mittel">2</option>
+                    <option value="teuer">3</option>
+                    </select>
+            <p>beschreibungstext</p>  <textarea class="form-control" rows="1" name="adresse"></textarea>
+            <p>lead</p>  <textarea class="form-control" rows="1" name="adresse"></textarea>
+            <p>telefon</p>  <input type="number" class="form-control" rows="1" name="ort_id" min="1000" max="9999">
+            <p>website</p>  <textarea class="form-control" rows="1" name="adresse"></textarea>
+                </fieldset>
             <div class="collapse" id="upload_container">
               <div class="well">
                   </div>
@@ -87,7 +106,8 @@
         </div>
       </div>
     </div>
-  </div> <!-- /Post hinzufügen -->
+  </div>
+  <!-- /Post hinzufügen -->
 
 
 <?php   while($post = mysqli_fetch_assoc($restaurant_list)) { ?>

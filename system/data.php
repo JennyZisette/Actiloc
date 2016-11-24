@@ -38,13 +38,24 @@ function get_restaurant($ort){
 }
 
 //Aktivität
-function get_aktivitaet($ort){
+function get_aktivitaet($ort, $indoor_outdoor, $preis){
 
   $sql = "SELECT aktivitaet.name, aktivitaet.adresse, aktivitaet.lead, aktivitaet.ort_id, aktivitaet.beschreibungstext, aktivitaet.telefon, aktivitaet.website, ort.ort_id, ort.ortsname FROM aktivitaet
   INNER JOIN ort USING(ort_id)
-  WHERE ort_id = '".$ort."';";
+  WHERE ort_id = '".$ort."'";
+
+  if ($indoor_outdoor != '') {
+    $sql .= " AND indoor_outdoor = '$indoor_outdoor'";
+  }
+
+  if ($preis != '') {
+    $sql .= " AND preis = '$preis'";
+  }
+
+
   return get_result($sql);
 }
+
 
 // admin Restaurant Anzeige
 function get_admin_restaurant($ort){

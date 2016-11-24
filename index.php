@@ -1,9 +1,9 @@
 <?php
 
 $error = false;
-  $error_msg = "";
-  $success = false;
-  $success_msg = "";
+$error_msg = "";
+$success = false;
+$success_msg = "";
   // Kontrolle, ob die Seite direkt aufgerufen wurde oder vom Login-Formular
   if(isset($_GET['ort'])){
     // Kontrolle mit isset, ob ort ausgefüllt wurde

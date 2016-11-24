@@ -59,27 +59,30 @@ else{
                       <?php echo $restaurant ['website'];?></p>
 
                   <div class="panel-footer">  <!-- Klappentext -->
-                  <script>
+                    <script>
 
-                    $(document).ready(function(){
-                      $(".show-button").click(function(){
-                          $(this).closest('.panel').find('.p1').show();
-                      });
-                      $(".hide-button").click(function(){
-                            $(this).closest('.panel').find('.p1').hide();
-                        });
+              $(document).ready(function(){
+                $(".show-button").click(function(){
+                    $(this).closest('.panel').find('.p1').show();
+                });
+                $(".hide-button").click(function(){
+                      $(this).closest('.panel').find('.p1').hide();
+                  });
 
-                    });
-                  </script>
-                  <button class="show-button">Mehr anzeigen</button>
-                  <button class="hide-button">Weniger anzeigen</button>
+              });
+              </script>
+              <button class="show-button">mehr anzeigen</button>
+              <button class="hide-button">weniger anzeigen</button>
 
-                </div>  <!-- Klappentext -->
               </div>
             </div>
-          </div> <!-- /Restaurant Listenelement -->
-        </div>
+          </div>
+      </div> <!-- /Restaurant Listenelement -->
+    </div>
 
-        <?php   } ?>
+      <!-- Klappentext -->
+
+
+      <?php   } ?>
 
    </body>

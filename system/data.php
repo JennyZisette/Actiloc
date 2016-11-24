@@ -40,14 +40,13 @@ function get_restaurant($ort){
 //Aktivität
 function get_aktivitaet($ort){
 
-  $sql = "SELECT aktivitaet.name, aktivitaet.adresse, aktivitaet.lead, aktivitaet.ort_id, ort.ort_id, ort.ortsname FROM aktivitaet
-  INNER JOIN ort USING(ort_id)
+  $sql = "SELECT aktivitaet.name, aktivitaet.adresse, aktivitaet.lead, aktivitaet.ort_id, aktivitaet.beschreibungstext, aktivitaet.telefon, aktivitaet.website FROM aktivitaet
   WHERE ort_id = '".$ort."';";
   return get_result($sql);
 }
 
 // admin Restaurant Anzeige
-function get_admin_restaurant(){
+function get_admin_restaurant($ort){
 
   $sql = "SELECT * FROM `restaurant`";
   return get_result($sql);
@@ -55,9 +54,9 @@ function get_admin_restaurant(){
 
 
 // admin Aktivität Anzeige
-function get_admin_aktivitaet(){
+function get_admin_aktivitaet($ort){
 
-  $sql = "SELECT * FROM `aktivitaet`";
+  $sql = "SELECT * FROM `aktivitaet'";
     return get_result($sql);
 }
 

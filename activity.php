@@ -58,23 +58,27 @@ else{
                       <?php echo $aktivitaet ['telefon'];?><br>
                       <?php echo $aktivitaet ['website'];?></p>
 
-                  <div class="panel-footer">  <!-- Klappentext -->
-                  <script>
+                      <!-- Klappentext -->
+                      <div class="panel-footer">
+                      <script>
 
-                    $(document).ready(function(){
-                      $(".show-button").click(function(){
-                          $(this).closest('.panel').find('.p1').show();
-                      });
-                      $(".hide-button").click(function(){
-                            $(this).closest('.panel').find('.p1').hide();
+                      $(document).ready(function(){
+                        $(".show-button").click(function(){
+                            $(this).closest('.panel').find('.p1').show();
                         });
+                        $(".hide-button").click(function(){
+                              $(this).closest('.panel').find('.p1').hide();
+                          });
+                      });
+                        </script>
+                        <button class="show-button">Mehr anzeigen</button>
+                        <button class="hide-button">Weniger anzeigen</button>
+                    </div>
+                    <!-- Klappentext -->
 
-                    });
-                  </script>
-                  <button class="show-button">Mehr anzeigen</button>
-                  <button class="hide-button">Weniger anzeigen</button>
 
-                </div>  <!-- Klappentext -->
+              </div>
+
               </div>
             </div>
           </div> <!-- /Restaurant Listenelement -->

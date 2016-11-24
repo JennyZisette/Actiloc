@@ -1,25 +1,25 @@
 <?php
 
-$error = false;
+  $error = false;
   $error_msg = "";
   $success = false;
   $success_msg = "";
-  // Kontrolle, ob die Seite direkt aufgerufen wurde oder vom Login-Formular
+
   if(isset($_GET['ort'])){
-    // Kontrolle mit isset, ob ort ausgefüllt wurde
+    // Kontrolle mit isset, ob Ort ausgefüllt wurde
     if(!empty($_GET['ort'])){
 
-      // Werte aus POST-Array auf SQL-Injections prüfen und in Variablen schreiben
+      // Eingabe keine falschen Werte
       $ort = filter_data($_GET['ort']);
 
-      // Liefert alle Infos zu User mit diesen Logindaten
+      // checkt ob Ort existiert
       $result = restaurant($ort_id);
 
       // Anzahl der gefundenen Ergebnisse in $row_count
   		$row_count = mysqli_num_rows($result);
       if( $row_count == 1){
         session_start();
-        $user = mysqli_fetch_assoc($result);
+        $suche = mysqli_fetch_assoc($result);
         $_SESSION['ort_id'] = $ort['ort_id'];
         header("Location:restaurant.php");
       }else{

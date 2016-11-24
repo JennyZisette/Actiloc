@@ -7,7 +7,6 @@
  $aktivitaet_list = get_admin_aktivitaet($ort);
 
 if(isset($_POST['post-submit'])){
-    $restaurant_id = filter_data ($_POST['restaurant_id'])
   	$name = filter_data($_POST['name']);
     $ort_id = filter_data($_POST['ort_id']);
     $adresse = filter_data($_POST['adresse']);
@@ -92,14 +91,14 @@ if(isset($_POST['post-submit'])){
             <p>adresse</p>  <textarea class="form-control" rows="1" name="adresse"></textarea>
 
             <p>kueche_id</p>  <select name="kueche_id><" class="form-control" rows="3" name="kueche_id">
-                <option value="italienisch">1</option>
-                <option value="asiatisch">2</option>
-                <option value="schweizerisch">3</option>
+                <option value="1">italienisch</option>
+                <option value="2">asiatisch</option>
+                <option value="3">schweizerisch</option>
                 </select>
             <p>preis</p>  <select name="preis><" class="form-control" rows="3" name="preis">
-                    <option value="günstig">1</option>
-                    <option value="mittel">2</option>
-                    <option value="teuer">3</option>
+                    <option value="1">günstig</option>
+                    <option value="2">mitel</option>
+                    <option value="3">teuer</option>
                     </select>
             <p>beschreibungstext</p>  <textarea class="form-control" rows="1" name="beschreibungstext"></textarea>
             <p>lead</p>  <textarea class="form-control" rows="1" name="lead"></textarea>

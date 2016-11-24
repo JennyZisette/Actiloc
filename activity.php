@@ -41,6 +41,39 @@ else{
             </a>
           </header>
       </div>
+
+      <div class="row containter-fluid"><!-- Aktivitätsfilter-->
+          <div class="col-xs-8 listenelement">
+            <div class="panel panel-default">
+              <div class="panel-heading">
+                <h3 class="panel-title">Filter</h3>
+              </div>
+              <div class="panel-body">
+                <form enctype="multipart/form-data" method="get" action="<?PHP echo $_SERVER['PHP_SELF'] ?>">
+                  <div class="row">
+                    <div class="col-xs-4">
+                      <select>
+                        <option value="indoor_outdoor">Indoor</option>
+                        <option value="indoor_outdoor">Outdoor</option>
+                      </select>
+                    </div>
+                    <div class="col-xs-4">
+                      <select>
+                        <option value="preis">1</option>
+                        <option value="preis">2</option>
+                        <option value="preis">3</option>
+                      </select>
+                    </div>
+                    <div class="col-xs-4">
+                      <button type="submit" name="post-submit" class="btn btn-primary">Filtern</button>
+                    </div>
+                  </div>
+                </form>
+              </div>
+          </div>
+        </div> <!-- /Aktivitätsfilter -->
+      </div>
+
       <?php   while($aktivitaet = mysqli_fetch_assoc($aktivitaet_list)) {  ?>
 
         <div class="row"><!-- Restaurant Listenelement-->

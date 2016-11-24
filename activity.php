@@ -2,17 +2,22 @@
 require_once("system/data.php");
 require_once("system/security.php");
 
+$indoor_outdoor = '';
+$preis = '';
+$aktivitaet_list='';
+
+if(isset($_POST['filter_aktivitaet'])){
+  $indoor_outdoor = $_POST['indoor_outdoor'];
+  $preis = $_POST['preis'];
+}
+
 if(!empty($_GET['ort'])){
   $ort = $_GET ['ort'];
-  $aktivitaet_list = get_aktivitaet($ort);
+  $aktivitaet_list = get_aktivitaet($ort, $indoor_outdoor, $preis);
 }
 else{
   echo "Dieses Ortsfeld exisitiert nicht.";
 }
-
-
-
-
 
 ?>
 <html>
@@ -49,23 +54,23 @@ else{
                 <h3 class="panel-title">Filter</h3>
               </div>
               <div class="panel-body">
-                <form enctype="multipart/form-data" method="get" action="<?PHP echo $_SERVER['PHP_SELF'] ?>">
+                <form enctype="multipart/form-data" method="post">
                   <div class="row">
                     <div class="col-xs-4">
-                      <select>
-                        <option value="indoor_outdoor">Indoor</option>
-                        <option value="indoor_outdoor">Outdoor</option>
+                      <select name="indoor_outdoor">
+                        <option value="indoor">Indoor</option>
+                        <option value="outdoor">Outdoor</option>
                       </select>
                     </div>
                     <div class="col-xs-4">
-                      <select>
-                        <option value="preis">1</option>
-                        <option value="preis">2</option>
-                        <option value="preis">3</option>
+                      <select name="preis">
+                        <option value="1">1</option>
+                        <option value="2">2</option>
+                        <option value="3">3</option>
                       </select>
                     </div>
                     <div class="col-xs-4">
-                      <button type="submit" name="post-submit" class="btn btn-primary">Filtern</button>
+                    <button type="submit" name="filter_aktivitaet" class="btn btn-primary">Filtern</button>
                     </div>
                   </div>
                 </form>

@@ -3,8 +3,8 @@
  require_once("system/security.php");
 
  $ort = "ort";
- $restaurant_list = get_admin_restaurant();
- $aktivitaet_list = get_admin_aktivitaet();
+ $restaurant_list = get_admin_restaurant($ort);
+ $aktivitaet_list = get_admin_aktivitaet($ort);
 
 
 
@@ -92,7 +92,7 @@
                     </select>
             <p>beschreibungstext</p>  <textarea class="form-control" rows="1" name="adresse"></textarea>
             <p>lead</p>  <textarea class="form-control" rows="1" name="adresse"></textarea>
-            <p>telefon</p>  <input type="number" class="form-control" rows="1" name="ort_id" min="1000" max="9999">
+            <p>telefon</p>  <input type="number" class="form-control" rows="1" name="telefon">
             <p>website</p>  <textarea class="form-control" rows="1" name="adresse"></textarea>
                 </fieldset>
             <div class="collapse" id="upload_container">
@@ -101,7 +101,7 @@
                   </div>
 
 
-            <button type="submit" name="post-submit" class="btn btn-primary">posten</button>
+            <button type="submit" name="post-submit" class="btn btn-primary">hinzufügen</button>
           </form>
         </div>
       </div>
@@ -135,22 +135,13 @@
 
 <?php } ?>
             </div>
-            <div class="panel-footer text-right">
-              <small><a class="text-muted" href="#"><span class="glyphicon glyphicon-thumbs-up" aria-hidden="true"></span></a></small>
-            </div>
+
           </div>
         </div><!-- /col-sm-10 -->
       </form>
     </div> <!-- /Beitrag -->
 
 </div> <!-- /Hauptinhalt -->
-
-
-
-
-
-
-
 
 
 
@@ -179,6 +170,84 @@
  </div>
  </div>
  <?php } ?>
+
+ <!-- Post hinzufügen -->
+ <div class="row">
+   <div class="col-xs-12">
+     <div class="panel panel-default">
+       <div class="panel-heading">Aktivität hinzufügen?</div>
+       <div class="panel-body">
+         <form enctype="multipart/form-data" method="post" action="<?PHP echo $_SERVER['PHP_SELF'] ?>">
+
+           <fieldset class="form-group">
+             <p>name</p><textarea class="form-control" rows="1" name="name"></textarea>
+
+             <p>ort_id (PLZ)</p><input type="number" class="form-control" rows="1" name="ort_id" min="1000" max="9999">
+
+           <p>adresse</p>  <textarea class="form-control" rows="1" name="adresse"></textarea>
+
+           <p>kueche_id</p>  <select name="indoor_outdoor><" class="form-control" rows="3" name="indoor_outdoor">
+               <option value="indoor">indoor</option>
+               <option value="outdoor">outdoor</option>
+               </select>
+           <p>preis</p>  <select name="kueche_id><" class="form-control" rows="3" name="kueche_id">
+                   <option value="günstig">1</option>
+                   <option value="mittel">2</option>
+                   <option value="teuer">3</option>
+                   </select>
+           <p>beschreibungstext</p>  <textarea class="form-control" rows="1" name="adresse"></textarea>
+           <p>lead</p>  <textarea class="form-control" rows="1" name="adresse"></textarea>
+           <p>telefon</p>  <input type="number" class="form-control" rows="1" name="telefon">
+           <p>website</p>  <textarea class="form-control" rows="1" name="adresse"></textarea>
+               </fieldset>
+           <div class="collapse" id="upload_container">
+             <div class="well">
+                 </div>
+                 </div>
+
+
+           <button type="submit" name="post-submit" class="btn btn-primary">hinzufügen</button>
+         </form>
+       </div>
+     </div>
+   </div>
+ </div>
+ <!-- /Post hinzufügen -->
+
+
+<?php   while($post = mysqli_fetch_assoc($aktivitaet_list)) { ?>
+ <!-- Beitrag -->
+   <div class="row">
+     <div class="col-xs-2">
+       <div class="thumbnail p42thumbnail">
+       </div><!-- /thumbnail p42thumbnail -->
+     </div><!-- /col-sm-2 -->
+
+     <form enctype="multipart/form-data" class="form-inline" method="post" action="<?PHP echo $_SERVER['PHP_SELF'] ?>">
+       <div class="col-xs-10">
+         <div class="panel panel-default p42panel">
+           <div class="panel-heading">
+<?php if($post['owner'] == $user_id){  ?>
+             <button type="submit" class="close" name="post_delete" value="<?php echo $post['post_id']; ?>">
+               <span aria-hidden="true">&times;</span>
+             </button>
+<?php } ?>
+             <h3 class="panel-title"><?php echo $post['firstname'] . " " . $post['lastname']; ?></h3>
+           </div>
+           <div class="panel-body">
+             <p><?php echo $post['text']; ?></p>
+
+
+<?php } ?>
+           </div>
+
+         </div>
+       </div><!-- /col-sm-10 -->
+     </form>
+   </div> <!-- /Beitrag -->
+
+</div> <!-- /Hauptinhalt -->
+
 
 
 

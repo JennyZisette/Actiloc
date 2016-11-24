@@ -6,10 +6,20 @@
  $restaurant_list = get_admin_restaurant($ort);
  $aktivitaet_list = get_admin_aktivitaet($ort);
 
+if(isset($_POST['post-submit'])){
+  	$name = filter_data($_POST['name']);
+    $ort_id = filter_data($_POST['ort_id']);
+    $adresse = filter_data($_POST['adresse']);
+    $kueche_id = filter_data($_POST['kueche_id']);
+    $preis = filter_data($_POST['preis']);
+    $beschreibungstext = filter_data($_POST['beschreibungstext']);
+    $lead = filter_data($_POST['lead']);
+    $telefon = filter_data($_POST['telefon']);
+    $website = filter_data($_POST['website']);
+  }
 
 
-
-   ?>
+ ?>
 
 
 
@@ -85,15 +95,15 @@
                 <option value="asiatisch">2</option>
                 <option value="schweizerisch">3</option>
                 </select>
-            <p>preis</p>  <select name="kueche_id><" class="form-control" rows="3" name="kueche_id">
+            <p>preis</p>  <select name="preis><" class="form-control" rows="3" name="preis">
                     <option value="günstig">1</option>
                     <option value="mittel">2</option>
                     <option value="teuer">3</option>
                     </select>
-            <p>beschreibungstext</p>  <textarea class="form-control" rows="1" name="adresse"></textarea>
-            <p>lead</p>  <textarea class="form-control" rows="1" name="adresse"></textarea>
+            <p>beschreibungstext</p>  <textarea class="form-control" rows="1" name="beschreibungstext"></textarea>
+            <p>lead</p>  <textarea class="form-control" rows="1" name="lead"></textarea>
             <p>telefon</p>  <input type="number" class="form-control" rows="1" name="telefon">
-            <p>website</p>  <textarea class="form-control" rows="1" name="adresse"></textarea>
+            <p>website</p>  <textarea class="form-control" rows="1" name="website"></textarea>
                 </fieldset>
             <div class="collapse" id="upload_container">
               <div class="well">

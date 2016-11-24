@@ -102,7 +102,7 @@ else{
                   <p class="p1" hidden="p1"><?php echo $aktivitaet ['beschreibungstext']; ?><br><br>
                       <?php echo $aktivitaet ['telefon'];?><br>
                       <?php echo $aktivitaet ['website'];?></p>
-
+                </div>
                       <!-- Klappentext -->
                       <div class="panel-footer">
                       <script>
@@ -122,7 +122,7 @@ else{
                     <!-- Klappentext -->
 
 
-              </div>
+
 
               </div>
             </div>

@@ -1,4 +1,6 @@
 <?php
+require_once("system/data.php");
+require_once("system/security.php");
 
   $error = false;
   $error_msg = "";

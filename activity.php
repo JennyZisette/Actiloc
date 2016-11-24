@@ -122,7 +122,7 @@ else{
                     <!-- Klappentext -->
 
 
-              </div>
+
 
               </div>
             </div>

@@ -28,12 +28,21 @@ function login($email , $password){
 
 
 // Restaurant
-function get_restaurant($ort){
+function get_restaurant($ort, $kueche_id, $preis){
 
   $sql = "SELECT kueche.art, restaurant.name, restaurant.adresse, restaurant.lead, restaurant.beschreibungstext, restaurant.website, restaurant.telefon, ort.ort_id, ort.ortsname FROM restaurant
   INNER JOIN kueche USING(kueche_id)
   INNER JOIN ort USING(ort_id)
   WHERE ort_id = '".$ort."';";
+
+  if ($kueche_id != '') {
+    $sql .= " AND kueche_id = '$kueche_id'";
+  }
+
+  if ($preis != '') {
+    $sql .= " AND preis = '$preis'";
+  }
+
   return get_result($sql);
 }
 

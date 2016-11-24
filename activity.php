@@ -47,7 +47,7 @@ else{
           </header>
       </div>
 
-      <div class="row containter-fluid"><!-- Aktivitätsfilter-->
+      <div class="row"><!-- Aktivitätsfilter-->
           <div class="col-xs-8 listenelement">
             <div class="panel panel-default">
               <div class="panel-heading">
@@ -57,12 +57,14 @@ else{
                 <form enctype="multipart/form-data" method="post">
                   <div class="row">
                     <div class="col-xs-4">
+                      <h5>Wo möchtest du etwas tun?</h5>
                       <select name="indoor_outdoor">
                         <option value="indoor">Indoor</option>
                         <option value="outdoor">Outdoor</option>
                       </select>
                     </div>
                     <div class="col-xs-4">
+                      <h5>Preiskategorie einschränken*</h5>
                       <select name="preis">
                         <option value="1">1</option>
                         <option value="2">2</option>
@@ -75,9 +77,14 @@ else{
                   </div>
                 </form>
               </div>
+              <div class="panel-footer">
+                <h6>* <br>Preiskategorie 1 = 0 - 50 Fr.<br>
+                    Preiskategorie 2 = 51 - 100 Fr. <br>
+                    Preiskategorie 3 = 101 - 500 Fr. </h6>
+              </div>
+            </div>
           </div>
         </div> <!-- /Aktivitätsfilter -->
-      </div>
 
       <?php   while($aktivitaet = mysqli_fetch_assoc($aktivitaet_list)) {  ?>
 
